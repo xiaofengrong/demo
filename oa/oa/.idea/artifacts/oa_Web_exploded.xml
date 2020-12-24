@@ -17,6 +17,7 @@
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.25" />
           <element id="library" level="project" name="Maven: org.freemarker:freemarker:2.3.30" />
           <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.62" />
+          <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.14" />
         </element>
       </element>
     </root>

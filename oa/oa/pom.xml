@@ -54,10 +54,17 @@
             <!--依赖只参与编译测试，不进行发布-->
             <scope>provided</scope>
         </dependency>
+        <!--FastJSON json序列化组件-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>1.2.62</version>
+        </dependency>
+        <!--common-codec MD5-->
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.14</version>
         </dependency>
     </dependencies>
     <build>

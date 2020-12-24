@@ -2,8 +2,6 @@ package com.xiaofeng.oa.dao;
 
 import com.xiaofeng.oa.entity.Node;
 import com.xiaofeng.oa.utils.MybatisUtils;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class RbacDao {
