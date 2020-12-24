@@ -43,5 +43,8 @@
         <mapper resource="mappers/rbac.xml"/>
         <mapper resource="mappers/employee.xml"/>
         <mapper resource="mappers/department.xml"/>
+        <mapper resource="mappers/leave_form.xml"/>
+        <mapper resource="mappers/process_flow.xml"/>
+        <mapper resource="mappers/notice.xml"/>
     </mappers>
 </configuration>
