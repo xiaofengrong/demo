@@ -26,7 +26,7 @@
                 </a>
             </li>
             <!--注销按钮-->
-            <li class="layui-nav-item"><a href="#">注销</a></li>
+            <li class="layui-nav-item"><a href="/logout">注销</a></li>
         </ul>
     </div>
     <!--左侧菜单栏-->
