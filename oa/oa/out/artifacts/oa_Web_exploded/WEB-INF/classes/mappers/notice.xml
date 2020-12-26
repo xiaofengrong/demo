@@ -8,4 +8,7 @@
 INSERT INTO sys_notice(receiver_id, content, create_time) VALUES ( #{receiverId}, #{content}, #{createTime});
 
    </insert>
+    <select id="selectByReceiverId" parameterType="Long" resultType="com.xiaofeng.oa.entity.Notice">
+        SELECT * FROM sys_notice WHERE receiver_id=#{value } order by  create_time DESC limit 0,100;
+    </select>
 </mapper>

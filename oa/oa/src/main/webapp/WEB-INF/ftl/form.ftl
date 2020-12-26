@@ -44,7 +44,7 @@
             <label class="layui-form-label">申请人</label>
             <div class="layui-input-block">
                 <div class="layui-col-md12" style="padding-top: 10px;">
-                    ${current_employee.name}[${current_employee.title}]
+                    ${current_employee.name}&nbsp;&nbsp;[&nbsp;${current_employee.title}&nbsp;]
                 </div>
 
             </div>

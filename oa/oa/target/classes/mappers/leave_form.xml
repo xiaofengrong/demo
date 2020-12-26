@@ -4,7 +4,23 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xiaofeng.oa.dao.LeaveFormDao">
 
-    <insert id="insert" parameterType="com.xiaofeng.oa.entity.LeaveForm" useGeneratedKeys="true" keyColumn="form_id" keyProperty="formId">
+    <insert id="insert" parameterType="com.xiaofeng.oa.entity.LeaveForm" useGeneratedKeys="true" keyColumn="form_id"
+            keyProperty="formId">
 INSERT INTO adm_leave_form( employee_id, form_type, start_time, end_time, reason, create_time, state) VALUES ( #{employeeId},#{formType}, #{startTime}, #{endTime}, #{reason}, #{createTime}, #{state})
    </insert>
+    <select id="selectByParams" parameterType="java.util.Map" resultType="java.util.Map">
+        SELECT f.*,e.name,d.*
+        FROM adm_leave_form f, adm_process_flow pf,adm_employee e,adm_department d
+        WHERE f.form_id=pf.form_id
+        AND f.employee_id=e.employee_id
+        AND e.department_id=d.department_id
+        AND pf.operator_id=#{pf_operator_id} AND pf.state=#{pf_state}
+    </select>
+    <!--审批流程-->
+    <select id="selectByFormId" parameterType="Long" resultType="com.xiaofeng.oa.entity.LeaveForm">
+        select * from adm_leave_form where form_id=#{value }
+    </select>
+    <update id="update" parameterType="com.xiaofeng.oa.entity.LeaveForm">
+        UPDATE adm_leave_form SET form_type = #{formType }, form_type = #{formType }, start_time = #{startTime }, end_time = #{endTime }, reason = #{reason }, create_time = #{createTime }, state = #{state } WHERE form_id = #{formId };
+    </update>
 </mapper>
