@@ -4,10 +4,7 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:task="http://www.springframework.org/schema/task"
-<<<<<<< HEAD
-=======
        xmlns:tx="http://www.springframework.org/schema/tx"
->>>>>>> 9db0f9c (显示图书类别)
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd
@@ -16,13 +13,9 @@
         http://www.springframework.org/schema/task
         https://www.springframework.org/schema/mvc/spring-task.xsd
         http://www.springframework.org/schema/context
-<<<<<<< HEAD
-        https://www.springframework.org/schema/context/spring-context.xsd">
-=======
         https://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/tx
         https://www.springframework.org/schema/tx/spring-tx.xsd">
->>>>>>> 9db0f9c (显示图书类别)
     <!--3.开启Spring MVC注解模式-->
     <context:component-scan base-package="com.xiaofeng"/>
     <mvc:annotation-driven/>
@@ -61,10 +54,6 @@
         <!--指定Freemarker模板文件扩展名-->
         <property name="suffix" value=".ftl"/>
     </bean>
-<<<<<<< HEAD
-
-
-=======
     <!--  Mybatis与Spring的整合配置  -->
     <!--    2.配置数据源-->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
@@ -95,5 +84,4 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
     <tx:annotation-driven transaction-manager="transactionManger"/>
->>>>>>> 9db0f9c (显示图书类别)
 </beans>

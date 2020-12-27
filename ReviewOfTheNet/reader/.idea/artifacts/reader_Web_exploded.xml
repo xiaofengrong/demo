@@ -29,8 +29,6 @@
           <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.11.4" />
           <element id="library" level="project" name="Maven: com.alibaba:druid:1.1.14" />
           <element id="library" level="project" name="Maven: org.springframework:spring-test:5.2.6.RELEASE" />
-<<<<<<< HEAD
-=======
           <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.2.3" />
           <element id="library" level="project" name="Maven: ch.qos.logback:logback-core:1.2.3" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.25" />
@@ -39,7 +37,6 @@
           <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus-core:3.3.2" />
           <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus-annotation:3.3.2" />
           <element id="library" level="project" name="Maven: com.github.jsqlparser:jsqlparser:3.1" />
->>>>>>> 9db0f9c (显示图书类别)
         </element>
       </element>
     </root>
