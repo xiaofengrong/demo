@@ -4,6 +4,10 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:task="http://www.springframework.org/schema/task"
+<<<<<<< HEAD
+=======
+       xmlns:tx="http://www.springframework.org/schema/tx"
+>>>>>>> 9db0f9c (显示图书类别)
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd
@@ -12,7 +16,13 @@
         http://www.springframework.org/schema/task
         https://www.springframework.org/schema/mvc/spring-task.xsd
         http://www.springframework.org/schema/context
+<<<<<<< HEAD
         https://www.springframework.org/schema/context/spring-context.xsd">
+=======
+        https://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+        https://www.springframework.org/schema/tx/spring-tx.xsd">
+>>>>>>> 9db0f9c (显示图书类别)
     <!--3.开启Spring MVC注解模式-->
     <context:component-scan base-package="com.xiaofeng"/>
     <mvc:annotation-driven/>
@@ -51,6 +61,39 @@
         <!--指定Freemarker模板文件扩展名-->
         <property name="suffix" value=".ftl"/>
     </bean>
+<<<<<<< HEAD
 
 
+=======
+    <!--  Mybatis与Spring的整合配置  -->
+    <!--    2.配置数据源-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url"
+                  value="jdbc:mysql://localhost:3306/reader?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai&amp;allowPublicKeyRetrieval=true"/>
+        <property name="username" value="root"/>
+        <property name="password" value="root"/>
+        <property name="initialSize" value="5"/>
+        <property name="maxActive" value="20"/>
+    </bean>
+    <!--3.SqlSessionFactoryBean用于根据配置信息创建SqlSessionFactory，不需我们手动创建-->
+<!--原生Mybatis与Spring 整合-->
+<!--    <bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">-->
+    <!--Mybatis-Plus与Spring 整合-->
+    <bean id="sessionFactory" class="com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="mapperLocations" value="classpath:mappers/*.xml"/>
+        <!-- 5.mybatis配置文件地址-->
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+    </bean>
+    <!--4.配置Mapper扫描器-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.xiaofeng.reader.mapper"/>
+    </bean>
+    <!--声明式事务配置 -->
+    <bean id="transactionManger" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <tx:annotation-driven transaction-manager="transactionManger"/>
+>>>>>>> 9db0f9c (显示图书类别)
 </beans>

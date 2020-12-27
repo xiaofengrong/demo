@@ -61,24 +61,12 @@
         <div class="col-8 mt-2">
                 <span data-category="-1" style="cursor: pointer" class="highlight  font-weight-bold category">全部</span>
                 |
-<<<<<<< HEAD
-                    <a style="cursor: pointer" data-category="1" class="text-black-50 font-weight-bold category">前端</a>
-                    |
-                    <a style="cursor: pointer" data-category="2" class="text-black-50 font-weight-bold category">后端</a>
-                    |
-                    <a style="cursor: pointer" data-category="3" class="text-black-50 font-weight-bold category">测试</a>
-                    |
-                    <a style="cursor: pointer" data-category="4" class="text-black-50 font-weight-bold category">产品</a>
-                    
-
-=======
             <#list categoryList as category>
                     <a style="cursor: pointer" data-category="${category.categoryId}" class="text-black-50 font-weight-bold category">${category.categoryName}</a>
                      <#if category_has_next>
                      |
                      </#if>
                 </#list>
->>>>>>> 9db0f9c (显示图书类别)
         </div>
 
         <div class="col-8 mt-2">
