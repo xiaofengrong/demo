@@ -3,5 +3,11 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xiaofeng.reader.mapper.BookMapper">
-
+    <update id="updateEvaluation" >
+        UPDATE book b SET evaluation_score=(
+    SELECT IFNULL(AVG(score),0) FROM evaluation WHERE book_id=b.book_id
+    AND state='enable'),evaluation_quantity=(
+    SELECT IFNULL(COUNT(*),0) FROM evaluation WHERE book_id=b.book_id
+    AND state='enable')
+    </update>
 </mapper>
