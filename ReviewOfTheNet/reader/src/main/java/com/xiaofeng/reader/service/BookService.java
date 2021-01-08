@@ -27,4 +27,24 @@ public interface BookService {
      * 更新图书评分/评价数量
      */
     public void updateEvaluation();
+
+    /**
+     * 创建新的图书
+     * @param book 图书对象
+     * @return 图书对象
+     */
+    public Book createBook(Book book);
+
+    /**
+     * 更新图书
+     * @param book 新图书对象
+     * @return 更新后的数据
+     */
+    public Book updateBook(Book book);
+
+    /**
+     * 删除图书及其相关数据
+     * @param bookId 图书编号
+     */
+    public void deleteBook(Long bookId);
 }
