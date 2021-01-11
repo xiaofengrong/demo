@@ -4,3 +4,7 @@
 ，利用OA系统可将办公数据数字化，可极大提高办公流程执行效率
 
 ## ReviewOfTheNet   书评网（ssm）
+
+## mall（spring boot）
+
+这是一个电商项目
