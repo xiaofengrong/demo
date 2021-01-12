@@ -1,6 +1,7 @@
 package com.xiaofeng.mall.model.dao;
 
 import com.xiaofeng.mall.model.pojo.User;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -16,4 +17,6 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+    User selectByName(String userName);
+    User selectLogin(@Param("userName") String userName, @Param("password")String password);
 }
