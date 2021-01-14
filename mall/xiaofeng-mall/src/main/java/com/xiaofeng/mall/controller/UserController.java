@@ -60,6 +60,7 @@ public class UserController {
 
     /**
      * 登录接口
+     *
      * @param userName 用户名
      * @param password 密码
      * @param session
@@ -78,45 +79,48 @@ public class UserController {
         User user = userService.login(userName, password);
         //保存用户信息时，不保存密码
         user.setPassword(null);
-        session.setAttribute(Constant.MALL_USER,user);
+        session.setAttribute(Constant.MALL_USER, user);
         return ApiRestResponse.success(user);
     }
 
     /**
      * 更新个性签名
+     *
      * @param session
      * @param signature 个性签名
      * @return
      * @throws MallException
      */
-   @PostMapping("/user/update")
-   @ResponseBody
-    public ApiRestResponse updateUserInfo(HttpSession session,@RequestParam String signature) throws MallException {
-       User currentUser = (User)session.getAttribute(Constant.MALL_USER);
-       if (currentUser==null){
-           return ApiRestResponse.error(MallExceptionEnum.NEED_LOGIN);
-       }
-       User user=new User();
-       user.setId(currentUser.getId());
-       user.setPersonalizedSignature(signature);
-       userService.updateInformation(user);
-       return ApiRestResponse.success();
-   }
+    @PostMapping("/user/update")
+    @ResponseBody
+    public ApiRestResponse updateUserInfo(HttpSession session, @RequestParam String signature) throws MallException {
+        User currentUser = (User) session.getAttribute(Constant.MALL_USER);
+        if (currentUser == null) {
+            return ApiRestResponse.error(MallExceptionEnum.NEED_LOGIN);
+        }
+        User user = new User();
+        user.setId(currentUser.getId());
+        user.setPersonalizedSignature(signature);
+        userService.updateInformation(user);
+        return ApiRestResponse.success();
+    }
 
     /**
      * 登出接口
+     *
      * @param session
      * @return
      */
-   @PostMapping("/user/logout")
-   @ResponseBody
-   public ApiRestResponse logout(HttpSession session){
-       session.removeAttribute(Constant.MALL_USER);
-       return ApiRestResponse.success();
-   }
+    @PostMapping("/user/logout")
+    @ResponseBody
+    public ApiRestResponse logout(HttpSession session) {
+        session.removeAttribute(Constant.MALL_USER);
+        return ApiRestResponse.success();
+    }
 
     /**
      * 管理员登录接口
+     *
      * @param userName
      * @param password
      * @param session
@@ -138,11 +142,13 @@ public class UserController {
             //是管理员,执行操作
             //保存用户信息时，不保存密码
             user.setPassword(null);
-            session.setAttribute(Constant.MALL_USER,user);
+            session.setAttribute(Constant.MALL_USER, user);
             return ApiRestResponse.success(user);
-        }else{
+        } else {
             return ApiRestResponse.error(MallExceptionEnum.NEED_ADMIN);
         }
     }
+
+
 }
 
